@@ -2,8 +2,7 @@ import mongoose from "../config/db.js";
 
 const UserSchema = mongoose.Schema({
     "username": {
-        type: String,
-        required: true
+        type: String
     },
     "email": {
         type: String,
