@@ -5,6 +5,15 @@ import dotenv from 'dotenv'
 const app = express()
 const PORT = process.env.PORT || 3000;
 
+app.use(cors(
+    {
+        origin: ['http://localhost:3000', 'https://todoflow-api.vercel.app/', 'https://localhost:5173'],
+        methods: ["POST", "GET", "PATCH", "DELETE"],
+        credentials: true,
+        allowedHeaders: ['Content-Type', 'Authorization', 'authorization']
+    }
+))
+
 app.get('/', (req, res) => {
     try {
         res.json({
