@@ -9,7 +9,7 @@ authRouter.post('/login', async (req, res) => {
             return res.json(isValid)
         }
 
-        res.json({msg: 'Cant find Account'})
+        res.status(404).json({msg: 'Cant find Account'})
     } catch (error) {
         console.log(error)
     }
